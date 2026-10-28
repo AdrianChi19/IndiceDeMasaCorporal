@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:Imc.Maui.ViewModel" 
+             x:DataType="viewmodels:MainViewModel"
+             x:Class="Imc.Maui.Views.MainPage"
+             Title="Índice de masa corporal">
+    <VerticalStackLayout
+        Padding="24"
+        Spacing="24">
+        <Border>
+            <VerticalStackLayout
+                Padding="18"
+                Spacing="10">
+                <Label
+                    Text="Proporcione el peso en kilogramos:"/>
+                <Entry
+                    Text="{Binding Path=Peso}"
+                    BackgroundColor="WhiteSmoke"
+                    TextColor="Black"/>
+                <Label
+                    Text="Proporcione la estatura en metros:"/>
+                <Entry
+                    Text="{Binding Path=Estatura}"
+                    BackgroundColor="WhiteSmoke"
+                    TextColor="Black"/>
+
+            </VerticalStackLayout>
+        </Border>
+        <HorizontalStackLayout
+            Spacing="24"
+            HorizontalOptions="Center">
+            <Button
+                Text="Calcular"
+                BackgroundColor="Green"
+                Command="{Binding Path=CalcularCommand}"/>
+            <Button
+                Text="Limpiar"
+                Command="{Binding Path=LimpiarCommand}"/>
+        </HorizontalStackLayout>
+        <Border>
+            <VerticalStackLayout
+                Padding="18"
+                Spacing="8">
+                <Label
+                    Text="El índice de masa corporal de la persona en kilogramos:"/>
+                <Label
+                    Text="{Binding Path=Imc}"
+                    HorizontalOptions="Center"
+                    FontSize="Medium"
+                    FontAttributes="Bold"/>
+                <Label
+                    Text="El estado de nutrición de la persona es:"/>
+                <Label
+                    Text="{Binding Path=EstadoNutricional}"
+                    HorizontalOptions="Center"
+                    FontSize="Medium"
+                    FontAttributes="Bold"/>
+            </VerticalStackLayout>
+        </Border>
+    </VerticalStackLayout>
+</ContentPage>
